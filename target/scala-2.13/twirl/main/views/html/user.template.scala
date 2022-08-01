@@ -33,7 +33,7 @@ Seq[Any](format.raw/*3.1*/("""
 </head>
 <body>
     <div>
-        <p>"""),_display_(/*12.13*/user/*12.17*/.login),format.raw/*12.23*/("""</p>
+        <p>"""),_display_(/*12.13*/user/*12.17*/.login),format.raw/*12.23*/(""" """),format.raw/*12.24*/(""":: """),_display_(/*12.28*/user/*12.32*/.following),format.raw/*12.42*/("""</p>
     </div>
 
 </body>
@@ -53,11 +53,11 @@ Seq[Any](format.raw/*3.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2022-07-25T11:44:14.086365
-                  SOURCE: /Users/sarina.salamon/Documents/githubProject/play-template/app/views/user.scala.html
-                  HASH: 9a62b86048cfaee6e88d9b239b2bcf4cd88524f6
-                  MATRIX: 432->1|762->26|873->44|900->45|1055->173|1068->177|1095->183
-                  LINES: 17->1|22->2|27->3|28->4|36->12|36->12|36->12
+                  DATE: 2022-07-28T15:45:07.937544
+                  SOURCE: /Users/sarina.salamon/Documents/githubProject/githubProject/app/views/user.scala.html
+                  HASH: 095e0b190545d63042adbac72b01096e9aafa23e
+                  MATRIX: 432->1|762->26|873->44|900->45|1055->173|1068->177|1095->183|1124->184|1155->188|1168->192|1199->202
+                  LINES: 17->1|22->2|27->3|28->4|36->12|36->12|36->12|36->12|36->12|36->12|36->12
                   -- GENERATED --
               */
           

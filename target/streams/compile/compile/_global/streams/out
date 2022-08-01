@@ -1,10 +1,6 @@
-[0m[[0m[31merror[0m] [0m[0m/Users/sarina.salamon/Documents/githubProject/play-template/app/controllers/GithubController.scala:9:2: trait Singleton is abstract; cannot be instantiated[0m
-[0m[[0m[31merror[0m] [0m[0m@Singleton[0m
-[0m[[0m[31merror[0m] [0m[0m ^[0m
-[0m[[0m[31merror[0m] [0m[0m/Users/sarina.salamon/Documents/githubProject/play-template/app/models/MyError.scala:14:5: reference to Status is ambiguous;[0m
-[0m[[0m[31merror[0m] [0m[0mit is imported twice in the same scope by[0m
-[0m[[0m[31merror[0m] [0m[0mimport play.api.mvc.Results.Status[0m
-[0m[[0m[31merror[0m] [0m[0mand import play.api.http.Status[0m
-[0m[[0m[31merror[0m] [0m[0m    Status.INTERNAL_SERVER_ERROR, //a 500 errror[0m
-[0m[[0m[31merror[0m] [0m[0m    ^[0m
-[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/sarina.salamon/Documents/githubProject/play-template/app/services/GithubService.scala:14:29: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : scala.concurrent.Future[Either[models.MyError,models.UserModel]][0m
+[0m[[0m[31merror[0m] [0m[0m required: cats.data.EitherT[scala.concurrent.Future,models.MyError,models.UserModel][0m
+[0m[[0m[31merror[0m] [0m[0m    connector.get[UserModel](s"https://api.github.com/users/$username")[0m
+[0m[[0m[31merror[0m] [0m[0m                            ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m
