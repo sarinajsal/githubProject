@@ -1,1 +1,1 @@
-["controllers.HomeControllerSpec","services.GithubServiceSpec"]
+["controllers.HomeControllerSpec","services.GithubServiceSpec","controllers.GithubControllerSpec","connectors.GithubConnectorspec"]
