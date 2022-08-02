@@ -1,8 +1,8 @@
 package controllers
 
+import models.RepoModel
 import play.api.mvc.{Action, AnyContent, BaseController, ControllerComponents}
 import services.GithubService
-
 
 import scala.concurrent.ExecutionContext
 import javax.inject.{Inject, Singleton}
@@ -16,6 +16,14 @@ class GithubController @Inject()(val controllerComponents: ControllerComponents,
       case Right(user) => Ok(views.html.user(user)) //cant case off of a future
       case Left(error) => BadRequest
     }
+  }
+
+  def getRepos(username: String): Action[AnyContent] = Action.async { implicit request =>
+    service.getRepos(username).map{
+      case Right(usersRepos) => Ok
+      case Left(error) => BadRequest
+    }
+
   }
 }
 

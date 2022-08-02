@@ -1,7 +1,7 @@
 package connectors
 
 import cats.data.EitherT
-import models.{MyError, UserModel}
+import models.{MyError, RepoModel, UserModel}
 import play.api.libs.json.OFormat
 import play.api.libs.ws.WSClient
 import play.api.libs.json.{JsError, JsSuccess, Json, OFormat}
@@ -40,6 +40,18 @@ class GithubConnector @Inject()(ws: WSClient){
             case JsError(error) => Left(MyError.BadError(404, "an error occurred"))
           }
     }
+  }
+
+  def getRepos[Response](repoUrl: String)(implicit repoReadsAndWrites: OFormat[Response], ec: ExecutionContext): Future[Either[MyError, RepoModel]]= {
+    val repoRequest = ws.url(repoUrl)
+    val response = repoRequest.get()
+      response.map{
+        result =>
+          result.json.validate[RepoModel] match {
+            case JsSuccess(validatedRepoModel, _) => Right(RepoModel(validatedRepoModel.repos))
+            case JsError(error) => Left(MyError.BadError(400, "error"))
+          }
+      }
   }
 
 }

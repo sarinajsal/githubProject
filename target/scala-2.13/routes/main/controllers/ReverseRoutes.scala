@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/Users/sarina.salamon/Documents/githubProject/githubProject/conf/routes
-// @DATE:Thu Jul 28 15:45:07 BST 2022
+// @DATE:Tue Aug 02 14:16:25 BST 2022
 
 import play.api.mvc.Call
 
@@ -21,6 +21,12 @@ package controllers {
     def getUserInfo(username:String): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "github/user/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("username", username)))
+    }
+  
+    // @LINE:9
+    def getRepos(username:String): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "github/user/repos/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("username", username)))
     }
   
   }

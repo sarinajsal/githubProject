@@ -57,19 +57,17 @@ class GithubControllerSpec extends BaseSpecWithApplication with MockFactory {
     }
 
 
-  "gitHubController. getUserInfo" should  {
-    "return a badrequest action when given no username" in {
-      val buildGetUserRequest: FakeRequest[AnyContent] = buildGet("/github/user/")
-      (mockedService.getUserInfo(_: String)).expects(*).returning(Future(Left(MyError.BadError(400, "error"))))
-      val getResult: Future[Result] = unitTestGithubController.getUserInfo("sarinajsal")(buildGetUserRequest)
+    "gitHubController. getUserInfo" should {
+      "return a badrequest action when given no username" in {
+        val buildGetUserRequest: FakeRequest[AnyContent] = buildGet("/github/user/")
+        (mockedService.getUserInfo(_: String)).expects(*).returning(Future(Left(MyError.BadError(400, "error"))))
+        val getResult: Future[Result] = unitTestGithubController.getUserInfo("sarinajsal")(buildGetUserRequest)
 
-      status(getResult) shouldBe Status.BAD_REQUEST
+        status(getResult) shouldBe Status.BAD_REQUEST
 
+      }
     }
   }
-
-
-
 }
 
 
