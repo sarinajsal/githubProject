@@ -2,45 +2,34 @@
 [0m[[0m[0mdebug[0m] [0m[0mForking tests - parallelism = false[0m
 [0m[[0m[0mdebug[0m] [0m[0mCreate a single-thread test executor[0m
 [0m[[0m[0mdebug[0m] [0m[0mRunner for org.scalatest.tools.Framework produced 4 initial tasks for 4 tests.[0m
-[0m[[0m[0mdebug[0m] [0m[0m  Running TaskDef(controllers.HomeControllerSpec, sbt.ForkMain$SubclassFingerscan@2e4ac9f5, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0m  Running TaskDef(controllers.HomeControllerSpec, sbt.ForkMain$SubclassFingerscan@60646e1, false, [SuiteSelector])[0m
 [0m[[0m[0minfo[0m] [0m[0m[32mHomeControllerSpec:[0m[0m
-[0m[[0m[0mdebug[0m] [0m[0m  Running TaskDef(services.GithubServiceSpec, sbt.ForkMain$SubclassFingerscan@145ee600, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0m  Running TaskDef(services.GithubServiceSpec, sbt.ForkMain$SubclassFingerscan@6a50faa4, false, [SuiteSelector])[0m
 [0m[[0m[0minfo[0m] [0m[0m[32mGithubServiceSpec:[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32mGithubService .getUserInfo[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- should return a Right(userModel)[0m[0m
 [0m[[0m[0mdebug[0m] [0m[0m    Produced 0 nested tasks and 1 events.[0m
-[0m[[0m[0mdebug[0m] [0m[0m  Running TaskDef(controllers.GithubControllerSpec, sbt.ForkMain$SubclassFingerscan@4e7a5e43, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0m  Running TaskDef(controllers.GithubControllerSpec, sbt.ForkMain$SubclassFingerscan@22e4a1f1, false, [SuiteSelector])[0m
 [0m[[0m[0minfo[0m] [0m[0m[32mGithubControllerSpec:[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32mGithubController .getUserInfo[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m- should return an Ok action *** FAILED ***[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m  java.util.concurrent.TimeoutException: Future timed out after [20 seconds][0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.concurrent.impl.Promise$DefaultPromise.tryAwait0(Promise.scala:248)[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.concurrent.impl.Promise$DefaultPromise.result(Promise.scala:261)[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.concurrent.Await$.$anonfun$result$1(package.scala:201)[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.concurrent.BlockContext$DefaultBlockContext$.blockOn(BlockContext.scala:62)[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.concurrent.Await$.result(package.scala:124)[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m  at play.api.test.ResultExtractors.status(Helpers.scala:399)[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m  at play.api.test.ResultExtractors.status$(Helpers.scala:399)[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m  at play.api.test.Helpers$.status(Helpers.scala:666)[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m  at controllers.GithubControllerSpec.$anonfun$new$2(GithubControllerSpec.scala:25)[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m  at org.scalatest.OutcomeOf.outcomeOf(OutcomeOf.scala:85)[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m  ...[0m[0m
-[0m[[0m[0mdebug[0m] [0m[0m    Produced 0 nested tasks and 1 events.[0m
-[0m[[0m[0mdebug[0m] [0m[0m  Running TaskDef(connectors.GithubConnectorspec, sbt.ForkMain$SubclassFingerscan@37cd364e, false, [SuiteSelector])[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should return an Ok action[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should return a 400 bad request error when inputting wrong/no username[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mgitHubController. getUserInfo[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should return an Ok (unit test)[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0m    Produced 0 nested tasks and 3 events.[0m
+[0m[[0m[0mdebug[0m] [0m[0m  Running TaskDef(connectors.GithubConnectorspec, sbt.ForkMain$SubclassFingerscan@60dc7439, false, [SuiteSelector])[0m
 [0m[[0m[0minfo[0m] [0m[0m[32mGithubConnectorspec:[0m[0m
 [0m[[0m[0mdebug[0m] [0m[0mRunner for com.novocode.junit.JUnitFramework produced 0 initial tasks for 0 tests.[0m
 [0m[[0m[0minfo[0m] [0m[0mScalaTest[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 27 seconds, 483 milliseconds.[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 2[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 8 seconds, 153 milliseconds.[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 4[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[36mSuites: completed 4, aborted 0[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 1, failed 1, canceled 0, ignored 0, pending 0[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m*** 1 TEST FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 4, failed 0, canceled 0, ignored 0, pending 0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mAll tests passed.[0m[0m
 [0m[[0m[0mdebug[0m] [0m[0mSummary for JUnit not available.[0m
-[0m[[0m[31merror[0m] [0m[0mFailed: Total 2, Failed 1, Errors 0, Passed 1[0m
+[0m[[0m[0minfo[0m] [0m[0mPassed: Total 4, Failed 0, Errors 0, Passed 4[0m
 [0m[[0m[0mdebug[0m] [0m[0mPassed tests:[0m
 [0m[[0m[0mdebug[0m] [0m[0m	connectors.GithubConnectorspec[0m
+[0m[[0m[0mdebug[0m] [0m[0m	controllers.GithubControllerSpec[0m
 [0m[[0m[0mdebug[0m] [0m[0m	controllers.HomeControllerSpec[0m
 [0m[[0m[0mdebug[0m] [0m[0m	services.GithubServiceSpec[0m
-[0m[[0m[31merror[0m] [0m[0mFailed tests:[0m
-[0m[[0m[31merror[0m] [0m[0m	controllers.GithubControllerSpec[0m
-[0m[[0m[31merror[0m] [0m[0m(Test / [31mtest[0m) sbt.TestsFailedException: Tests unsuccessful[0m
