@@ -6,6 +6,7 @@ import services.GithubService
 
 import scala.concurrent.ExecutionContext
 import javax.inject.{Inject, Singleton}
+import play.api.mvc._
 
 @Singleton
 class GithubController @Inject()(val controllerComponents: ControllerComponents,
