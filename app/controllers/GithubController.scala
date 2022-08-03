@@ -20,7 +20,8 @@ class GithubController @Inject()(val controllerComponents: ControllerComponents,
 
   def getRepos(username: String): Action[AnyContent] = Action.async { implicit request =>
     service.getRepos(username).map{
-      case Right(usersRepos) => Ok
+      case Right(usersRepos) => Ok(views.html.repos(usersRepos))
+//      val r = usersRepos.map(repo => repo.full_name)
       case Left(error) => BadRequest
     }
 

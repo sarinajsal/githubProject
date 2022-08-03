@@ -1,5 +1,5 @@
 @import models.RepoModel
-@(usersRepos: RepoModel)
+@(usersRepos: Seq[RepoModel])
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +9,8 @@
 </head>
 <body>
 <div>
-    <p>usersRepos.repos</p>
+    @usersRepos.map{ repo =>
+        <li>@repo.full_name</li>}
 </div>
 
 </body>

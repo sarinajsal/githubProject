@@ -42,13 +42,13 @@ class GithubConnector @Inject()(ws: WSClient){
     }
   }
 
-  def getRepos[Response](repoUrl: String)(implicit repoReadsAndWrites: OFormat[Response], ec: ExecutionContext): Future[Either[MyError, RepoModel]]= {
+  def getRepos[Response](repoUrl: String)(implicit repoReadsAndWrites: OFormat[Response], ec: ExecutionContext): Future[Either[MyError, Seq[RepoModel]]]= {
     val repoRequest = ws.url(repoUrl)
     val response = repoRequest.get()
       response.map{
         result =>
-          result.json.validate[RepoModel] match {
-            case JsSuccess(validatedRepoModel, _) => Right(RepoModel(validatedRepoModel.repos))
+          result.json.validate[Seq[RepoModel]] match {
+            case JsSuccess(validatedRepoModel, _) => Right(validatedRepoModel)
             case JsError(error) => Left(MyError.BadError(400, "error"))
           }
       }

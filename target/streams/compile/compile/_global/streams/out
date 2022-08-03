@@ -1,6 +1,4 @@
-[0m[[0m[31merror[0m] [0m[0m/Users/sarina.salamon/Documents/githubProject/play-template/app/services/GithubService.scala:14:29: type mismatch;[0m
-[0m[[0m[31merror[0m] [0m[0m found   : scala.concurrent.Future[Either[models.MyError,models.UserModel]][0m
-[0m[[0m[31merror[0m] [0m[0m required: cats.data.EitherT[scala.concurrent.Future,models.MyError,models.UserModel][0m
-[0m[[0m[31merror[0m] [0m[0m    connector.get[UserModel](s"https://api.github.com/users/$username")[0m
-[0m[[0m[31merror[0m] [0m[0m                            ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/sarina.salamon/Documents/githubProject/githubProject/app/views/user.scala.html:13:15: not found: value a[0m
+[0m[[0m[31merror[0m] [0m[0m        <h3><@a href="http://localhost:9000/github/user/repos/$user.login">@user.login repositories</a></h3>[0m
+[0m[[0m[31merror[0m] [0m[0m              ^[0m
 [0m[[0m[31merror[0m] [0m[0mone error found[0m

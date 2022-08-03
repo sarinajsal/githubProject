@@ -13,6 +13,6 @@ class GithubService @Inject()(connector: GithubConnector)(implicit ec: Execution
   def getUserInfo(username: String): Future[Either[MyError, UserModel]] =
     connector.get[UserModel](s"https://api.github.com/users/$username")
 
-  def getRepos(username: String): Future[Either[MyError, RepoModel]] =
+  def getRepos(username: String): Future[Either[MyError, Seq[RepoModel]]] =
     connector.getRepos[RepoModel](s"https://api.github.com/users/$username/repos")
 }
