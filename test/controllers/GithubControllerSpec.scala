@@ -43,6 +43,23 @@ class GithubControllerSpec extends BaseSpecWithApplication with MockFactory {
     }
   }
 
+  "GithubController. getRepos" should {
+    "return an Ok and html content" in {
+      val buildGetRepoRequest: FakeRequest[AnyContent] = buildGet("/github/user/repos/sarinajsal")
+      val getResult: Future[Result] = integrationTestGithubController.getRepos("sarinajsal")(buildGetRepoRequest)
+
+      status(getResult) shouldBe Status.OK
+      contentType(getResult) shouldBe Some("text/html")
+//      contentAsString(getResult) must include("brianTutorials")
+    }
+    "return a badrequest when not given a username" in {
+      val buildGetRepoRequest: FakeRequest[AnyContent] = buildGet("/github/user/repos/sarinajsal")
+      val getResult: Future[Result] = integrationTestGithubController.getRepos("")(buildGetRepoRequest)
+
+      status(getResult) shouldBe Status.BAD_REQUEST
+    }
+  }
+
   // ---------------------------------UNIT TESTS-----------------------------
 
   "gitHubController. getUserInfo" should {
