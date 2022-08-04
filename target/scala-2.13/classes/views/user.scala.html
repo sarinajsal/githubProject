@@ -10,6 +10,7 @@
 <body>
     <div>
         <p>@user.login :: @user.following</p>
+        <a href="@routes.GithubController.getRepos(user.login)">@user.login repositories</a>
     </div>
 
 </body>

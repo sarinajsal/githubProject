@@ -7,3 +7,5 @@ GET     /assets/*file               controllers.Assets.versioned(path="/public",
 GET     /github/user/:username      controllers.GithubController.getUserInfo(username: String)
 
 GET     /github/user/repos/:username     controllers.GithubController.getRepos(username: String)
+
+GET     /github/users/:username/repos/:repoName     controllers.GithubController.getRepoFiles

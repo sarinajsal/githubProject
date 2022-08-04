@@ -1,7 +1,7 @@
 package controllers
 
 import baseSpec.BaseSpecWithApplication
-import models.{MyError, UserModel}
+import models.{MyError, RepoModel, UserModel}
 import org.scalamock.scalatest.MockFactory
 import play.api.mvc.{AnyContent, Result}
 import play.api.test.{FakeRequest, Injecting}
@@ -19,6 +19,7 @@ class GithubControllerSpec extends BaseSpecWithApplication with MockFactory {
 
 
   val user1: UserModel = UserModel("sarinajsal", "2022-01-18T14:53:16Z", None, 7, 3)
+  val testRepoModel: Seq[RepoModel] = Seq(RepoModel("repoName"))
 
   // ---------------------------------INTEGRATION TESTS-----------------------------
 
@@ -68,7 +69,27 @@ class GithubControllerSpec extends BaseSpecWithApplication with MockFactory {
       }
     }
   }
+
+  "githubController. getRepos" should {
+    "return an Ok and html" in {
+      val buildRepoGetRequest: FakeRequest[AnyContent] = buildGet("/github/user/repos/aUsername")
+      (mockedService.getRepos(_:String)).expects(*).returning (Future(Right(Seq(RepoModel("name")))))
+      val getResult: Future[Result] = unitTestGithubController.getRepos("aUsernname")(buildRepoGetRequest)
+
+      status(getResult) shouldBe Status.OK
+      contentType(getResult) shouldBe Some("text/html")
+    }
+
+    "return badrequest" in {
+      val buildRepoGetRequest: FakeRequest[AnyContent] = buildGet("/github/user/repos/aUsername")
+      (mockedService.getRepos(_:String)).expects(*).returning (Future(Left(MyError.BadError(400, "error"))))
+      val getResult: Future[Result] = unitTestGithubController.getRepos("aUsernname")(buildRepoGetRequest)
+
+      status(getResult) shouldBe Status.BAD_REQUEST
+    }
+  }
 }
+
 
 
 //  override def beforeEach(): Unit = repository.deleteAll()
