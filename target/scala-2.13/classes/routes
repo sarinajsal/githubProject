@@ -8,4 +8,7 @@ GET     /github/user/:username      controllers.GithubController.getUserInfo(use
 
 GET     /github/user/repos/:username     controllers.GithubController.getRepos(username: String)
 
-GET     /github/users/:username/repos/:repoName     controllers.GithubController.getRepoFiles
+
+
+GET     /github/repos/:username/:repoName/contents      controllers.GithubController.getRepoFiles(username:String, repoName:String)
+

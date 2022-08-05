@@ -28,7 +28,12 @@ class GithubController @Inject()(val controllerComponents: ControllerComponents,
 
   }
 
-
+  def getRepoFiles(username: String, repoName: String): Action[AnyContent] = Action.async { implicit request =>
+    service.getRepoFiles(username, repoName).map{
+      case Right(files) => Ok(views.html.repoFiles(files))
+      case Left(error) => BadRequest
+    }
+  }
 }
 
 

@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/Users/sarina.salamon/Documents/githubProject/githubProject/conf/routes
-// @DATE:Tue Aug 02 14:16:25 BST 2022
+// @DATE:Fri Aug 05 10:06:56 BST 2022
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -34,6 +34,16 @@ package controllers.javascript {
       """
         function(username0) {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "github/user/repos/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("username", username0))})
+        }
+      """
+    )
+  
+    // @LINE:13
+    def getRepoFiles: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.GithubController.getRepoFiles",
+      """
+        function(username0,repoName1) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "github/repos/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("username", username0)) + "/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("repoName", repoName1)) + "/contents"})
         }
       """
     )

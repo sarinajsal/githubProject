@@ -60,6 +60,16 @@ class GithubControllerSpec extends BaseSpecWithApplication with MockFactory {
     }
   }
 
+  "GithubController. getRepoFiles" should {
+    "return an Ok " in {
+      val buildGetRepoRequest: FakeRequest[AnyContent] = buildGet("/github/repos/sarinajsal/cafeAttemptScala/contents")
+      val getResult: Future[Result] = integrationTestGithubController.getRepoFiles("sarinajsal","cafeAttemptScala")(buildGetRepoRequest)
+
+      status(getResult) shouldBe Status.OK
+
+    }
+  }
+
   // ---------------------------------UNIT TESTS-----------------------------
 
   "gitHubController. getUserInfo" should {

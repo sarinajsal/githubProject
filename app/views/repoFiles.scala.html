@@ -1,0 +1,18 @@
+@import models.RepoFilesModel
+@(repoFiles: Seq[RepoFilesModel])
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div>
+    @repoFiles.map { repoFileName =>
+        <li>@repoFileName.name</li>}
+</div>
+
+</body>
+</html>
