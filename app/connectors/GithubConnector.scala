@@ -1,7 +1,7 @@
 package connectors
 
 import cats.data.EitherT
-import models.{MyError, RepoModel, UserModel}
+import models.{MyError, RepoFilesModel, RepoModel, UserModel}
 import play.api.libs.json.OFormat
 import play.api.libs.ws.WSClient
 import play.api.libs.json.{JsError, JsSuccess, Json, OFormat}
@@ -52,6 +52,17 @@ class GithubConnector @Inject()(ws: WSClient){
             case JsError(error) => Left(MyError.BadError(400, "error"))
           }
       }
+  }
+
+  def getRepoFiles[Response](repoFileUrl: String)(implicit repoFilesRdsWrites: OFormat[Response], ec:ExecutionContext): Future[Either[MyError, Seq[RepoFilesModel]]] = {
+    val repoFileResponse = ws.url(repoFileUrl).get()
+    repoFileResponse.map{
+      result =>
+        result.json.validate[Seq[RepoFilesModel]] match {
+          case JsSuccess(validatedRepoFileModel, _) => Right(validatedRepoFileModel)
+          case JsError(error) => Left(MyError.BadError(400, "error"))
+        }
+    }
   }
 
 }
