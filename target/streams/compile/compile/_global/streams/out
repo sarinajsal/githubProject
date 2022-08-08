@@ -1,4 +1,28 @@
-[0m[[0m[31merror[0m] [0m[0m/Users/sarina.salamon/Documents/githubProject/githubProject/app/views/user.scala.html:13:52: not found: value username[0m
-[0m[[0m[31merror[0m] [0m[0m        <a href="@routes.GithubController.getRepos(username)">@user.login repositories</a>[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/sarina.salamon/Documents/githubProject/githubProject/app/repositories/DataRepository.scala:4:8: object DataModel is not a member of package models[0m
+[0m[[0m[31merror[0m] [0m[0mimport models.DataModel[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/sarina.salamon/Documents/githubProject/githubProject/app/repositories/DataRepository.scala:5:12: object mongodb is not a member of package org[0m
+[0m[[0m[31merror[0m] [0m[0mimport org.mongodb.scala.bson.conversions.Bson[0m
+[0m[[0m[31merror[0m] [0m[0m           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/sarina.salamon/Documents/githubProject/githubProject/app/repositories/DataRepository.scala:6:12: object mongodb is not a member of package org[0m
+[0m[[0m[31merror[0m] [0m[0mimport org.mongodb.scala.model.Filters.empty[0m
+[0m[[0m[31merror[0m] [0m[0m           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/sarina.salamon/Documents/githubProject/githubProject/app/repositories/DataRepository.scala:7:12: object mongodb is not a member of package org[0m
+[0m[[0m[31merror[0m] [0m[0mimport org.mongodb.scala.model._[0m
+[0m[[0m[31merror[0m] [0m[0m           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/sarina.salamon/Documents/githubProject/githubProject/app/repositories/DataRepository.scala:8:12: object mongodb is not a member of package org[0m
+[0m[[0m[31merror[0m] [0m[0mimport org.mongodb.scala.result[0m
+[0m[[0m[31merror[0m] [0m[0m           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/sarina.salamon/Documents/githubProject/githubProject/app/repositories/DataRepository.scala:9:8: not found: object uk[0m
+[0m[[0m[31merror[0m] [0m[0mimport uk.gov.hmrc.mongo.MongoComponent[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/sarina.salamon/Documents/githubProject/githubProject/app/repositories/DataRepository.scala:10:8: not found: object uk[0m
+[0m[[0m[31merror[0m] [0m[0mimport uk.gov.hmrc.mongo.play.json.PlayMongoRepository[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/sarina.salamon/Documents/githubProject/githubProject/app/repositories/DataRepository.scala:19:47: not found: type MongoComponent[0m
+[0m[[0m[31merror[0m] [0m[0m                              mongoComponent: MongoComponent[0m
+[0m[[0m[31merror[0m] [0m[0m                                              ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/sarina.salamon/Documents/githubProject/githubProject/app/views/repos.scala.html:13:52: not found: value sarinajsal[0m
+[0m[[0m[31merror[0m] [0m[0m    <a href="@routes.GithubController.getRepoFiles(sarinajsal, repo.full_name)"><li>@repo.full_name</li></a>}[0m
 [0m[[0m[31merror[0m] [0m[0m                                                   ^[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[31merror[0m] [0m[0m9 errors found[0m

@@ -10,7 +10,7 @@
 <body>
 <div>
     @usersRepos.map{ repo =>
-        <li>@repo.full_name</li>}
+    <a href="@routes.GithubController.getRepoFiles(sarinajsal, repo.full_name)"><li>@repo.full_name</li></a>}
 </div>
 
 </body>
