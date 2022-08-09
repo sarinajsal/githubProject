@@ -1,6 +1,6 @@
 package repositories
 
-import models.UserModel
+import models.{MyError, UserModel}
 
 import javax.inject.{Inject, Singleton}
 import org.mongodb.scala.bson.conversions.Bson
@@ -28,7 +28,22 @@ class DataRepository @Inject()(
   def createUser(user: UserModel): Future[UserModel] =
     collection.insertOne(user).toFuture().map(_ =>user)
 
+  private def byLogin(login: String): Bson =
+    Filters.and(
+      Filters.equal("_login", login)
+    )
 
+  def readUser(userLogin: String): Future[Either[MyError, UserModel]]=
+    collection.find(byLogin(userLogin)).headOption() flatMap{
+      case Some(data) => Future(Right(data))
+      case _ => Future(Left(MyError.BadError(400, "error")))
+    }
 
+  def deleteUser(userlogin: String): Future[result.DeleteResult] =
+    collection.deleteOne(
+      filter = byLogin(userlogin)
+    ).toFuture()
+
+  def deleteAll(): Future[Unit] = collection.deleteMany(empty()).toFuture().map(_ => ())
 
 }
