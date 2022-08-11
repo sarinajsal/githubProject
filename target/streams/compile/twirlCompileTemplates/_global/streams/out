@@ -1,0 +1,3 @@
+[0m[[0m[31merror[0m] [0m[0m[Error] /Users/sarina.salamon/Documents/githubProject/githubProject/app/views/repoFiles.scala.html:18[0m
+[0m[[0m[31merror[0m] [0m[0m</html>: Expected '}' but found 'EOF'[0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mtwirlCompileTemplates[0m) Twirl compilation failed[0m

@@ -1,0 +1,17 @@
+@import models.RepoModel
+@(usersRepos: Seq[RepoModel])
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+   @* @usersRepos.map{ repo =>
+    <a href="@routes.GithubController.getRepoFiles(sarinajsal, repo.full_name)"><li>@repo.full_name</li></a>} *@
+</div>
+
+</body>
+</html>

@@ -38,7 +38,7 @@ Seq[Any](format.raw/*2.1*/("""
       A demo project based off the <a href="https://github.com/miranda-hawkes/induction-tutorials/blob/master/Building-A-RESTful-API-With-Scala-Play/README.md"> Building a RESTful API with Scala and Play </a> tutorial.
     </p>
 
-    <p class="lead mb-5">This project is deployed via Heroku.</p>
+    <p class="lead mb-5">This project is deployed via Heroku. hi</p>
 
     <h3>API Documentation</h3>
     <div class="justify-content-center">
@@ -121,10 +121,10 @@ Seq[Any](format.raw/*2.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2022-05-23T22:16:24.238
-                  SOURCE: /Users/vinniebrice/induction/play-template/app/views/index.scala.html
-                  HASH: 5497a12eba0b5213723c306a69b4918019aed905
-                  MATRIX: 722->1|818->4|845->6|880->33|919->35|947->37|3096->2156
+                  DATE: 2022-08-02T11:56:14.105365
+                  SOURCE: /Users/sarina.salamon/Documents/githubProject/githubProject/app/views/index.scala.html
+                  HASH: a342604f7fdefcac02f3671893759e1b14ac3f24
+                  MATRIX: 722->1|818->4|845->6|880->33|919->35|947->37|3099->2159
                   LINES: 21->1|26->2|27->3|27->3|27->3|29->5|107->83
                   -- GENERATED --
               */

@@ -1,27 +1,13 @@
-[0m[[0m[33mwarn[0m] [0m[0m/Users/vinniebrice/induction/play-template/app/repositories/BookRepository.scala:39:35: Auto-application to `()` is deprecated. Supply the empty argument list `()` explicitly to invoke method headOption,[0m
-[0m[[0m[33mwarn[0m] [0m[0mor remove the empty argument list from its definition (Java-defined methods are exempt).[0m
-[0m[[0m[33mwarn[0m] [0m[0mIn Scala 3, an unapplied method like this will be eta-expanded into a function.[0m
-[0m[[0m[33mwarn[0m] [0m[0m    collection.find(byBook(book)).headOption flatMap {[0m
-[0m[[0m[33mwarn[0m] [0m[0m                                  ^[0m
-[0m[[0m[33mwarn[0m] [0m[0m/Users/vinniebrice/induction/play-template/app/repositories/BookRepository.scala:47:31: Auto-application to `()` is deprecated. Supply the empty argument list `()` explicitly to invoke method headOption,[0m
-[0m[[0m[33mwarn[0m] [0m[0mor remove the empty argument list from its definition (Java-defined methods are exempt).[0m
-[0m[[0m[33mwarn[0m] [0m[0mIn Scala 3, an unapplied method like this will be eta-expanded into a function.[0m
-[0m[[0m[33mwarn[0m] [0m[0m    collection.find(byID(id)).headOption flatMap {[0m
-[0m[[0m[33mwarn[0m] [0m[0m                              ^[0m
-[0m[[0m[33mwarn[0m] [0m[0m/Users/vinniebrice/induction/play-template/conf/routes:10:1: Auto-application to `()` is deprecated. Supply the empty argument list `()` explicitly to invoke method deleteAll,[0m
-[0m[[0m[33mwarn[0m] [0m[0mor remove the empty argument list from its definition (Java-defined methods are exempt).[0m
-[0m[[0m[33mwarn[0m] [0m[0mIn Scala 3, an unapplied method like this will be eta-expanded into a function.[0m
-[0m[[0m[33mwarn[0m] [0m[0mDELETE  /api/allBook                        controllers.ApplicationController.deleteAll[0m
-[0m[[0m[33mwarn[0m] [0m[0m/Users/vinniebrice/induction/play-template/conf/routes:11:1: Auto-application to `()` is deprecated. Supply the empty argument list `()` explicitly to invoke method readByBook,[0m
-[0m[[0m[33mwarn[0m] [0m[0mor remove the empty argument list from its definition (Java-defined methods are exempt).[0m
-[0m[[0m[33mwarn[0m] [0m[0mIn Scala 3, an unapplied method like this will be eta-expanded into a function.[0m
-[0m[[0m[33mwarn[0m] [0m[0mGET     /api/byBook                         controllers.ApplicationController.readByBook[0m
-[0m[[0m[33mwarn[0m] [0m[0m/Users/vinniebrice/induction/play-template/conf/routes:10:1: Auto-application to `()` is deprecated. Supply the empty argument list `()` explicitly to invoke method deleteAll,[0m
-[0m[[0m[33mwarn[0m] [0m[0mor remove the empty argument list from its definition (Java-defined methods are exempt).[0m
-[0m[[0m[33mwarn[0m] [0m[0mIn Scala 3, an unapplied method like this will be eta-expanded into a function.[0m
-[0m[[0m[33mwarn[0m] [0m[0mDELETE  /api/allBook                        controllers.ApplicationController.deleteAll[0m
-[0m[[0m[33mwarn[0m] [0m[0m/Users/vinniebrice/induction/play-template/conf/routes:11:1: Auto-application to `()` is deprecated. Supply the empty argument list `()` explicitly to invoke method readByBook,[0m
-[0m[[0m[33mwarn[0m] [0m[0mor remove the empty argument list from its definition (Java-defined methods are exempt).[0m
-[0m[[0m[33mwarn[0m] [0m[0mIn Scala 3, an unapplied method like this will be eta-expanded into a function.[0m
-[0m[[0m[33mwarn[0m] [0m[0mGET     /api/byBook                         controllers.ApplicationController.readByBook[0m
-[0m[[0m[33mwarn[0m] [0m[0m6 warnings found[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/sarina.salamon/Documents/githubProject/githubProject/app/views/user.scala.html:12:18: value login is not a member of models.UserModel[0m
+[0m[[0m[31merror[0m] [0m[0mdid you mean _login?[0m
+[0m[[0m[31merror[0m] [0m[0m        <p>@user.login :: @user.following</p>[0m
+[0m[[0m[31merror[0m] [0m[0m                 ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/sarina.salamon/Documents/githubProject/githubProject/app/views/user.scala.html:13:57: value login is not a member of models.UserModel[0m
+[0m[[0m[31merror[0m] [0m[0mdid you mean _login?[0m
+[0m[[0m[31merror[0m] [0m[0m        <a href="@routes.GithubController.getRepos(user.login)">@user.login repositories</a>[0m
+[0m[[0m[31merror[0m] [0m[0m                                                        ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/sarina.salamon/Documents/githubProject/githubProject/app/views/user.scala.html:13:71: value login is not a member of models.UserModel[0m
+[0m[[0m[31merror[0m] [0m[0mdid you mean _login?[0m
+[0m[[0m[31merror[0m] [0m[0m        <a href="@routes.GithubController.getRepos(user.login)">@user.login repositories</a>[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                      ^[0m
+[0m[[0m[31merror[0m] [0m[0mthree errors found[0m

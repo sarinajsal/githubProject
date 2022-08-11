@@ -1,0 +1,17 @@
+@import models.UserModel
+@(user: UserModel)
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>user</title>
+</head>
+<body>
+    <div>
+        <p>@user._login :: @user.following</p>
+        <a href="@routes.GithubController.getRepos(user._login)">@user._login repositories</a>
+    </div>
+
+</body>
+</html>
