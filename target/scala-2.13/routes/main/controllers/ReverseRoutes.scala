@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/Users/sarina.salamon/Documents/githubProject/githubProject/conf/routes
-// @DATE:Fri Aug 05 10:06:56 BST 2022
+// @DATE:Tue Aug 09 11:08:02 BST 2022
 
 import play.api.mvc.Call
 
@@ -9,6 +9,21 @@ import _root_.controllers.Assets.Asset
 
 // @LINE:2
 package controllers {
+
+  // @LINE:15
+  class ReverseDataRepController(_prefix: => String) {
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:15
+    def read(username:String): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "github/read/user/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("username", username)))
+    }
+  
+  }
 
   // @LINE:7
   class ReverseGithubController(_prefix: => String) {

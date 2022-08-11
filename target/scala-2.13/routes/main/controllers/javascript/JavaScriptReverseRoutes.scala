@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/Users/sarina.salamon/Documents/githubProject/githubProject/conf/routes
-// @DATE:Fri Aug 05 10:06:56 BST 2022
+// @DATE:Tue Aug 09 11:08:02 BST 2022
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -9,6 +9,26 @@ import _root_.controllers.Assets.Asset
 
 // @LINE:2
 package controllers.javascript {
+
+  // @LINE:15
+  class ReverseDataRepController(_prefix: => String) {
+
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:15
+    def read: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.DataRepController.read",
+      """
+        function(username0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "github/read/user/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("username", username0))})
+        }
+      """
+    )
+  
+  }
 
   // @LINE:7
   class ReverseGithubController(_prefix: => String) {

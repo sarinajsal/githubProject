@@ -12,3 +12,7 @@ GET     /github/user/repos/:username     controllers.GithubController.getRepos(u
 
 GET     /github/repos/:username/:repoName/contents      controllers.GithubController.getRepoFiles(username:String, repoName:String)
 
+GET     /github/read/user/:username     controllers.DataRepController.read(username:String)
+
+POST    /github/create/user             controllers.DataRepController.create
+

@@ -15,7 +15,8 @@ import play.api.mvc.{AnyContentAsEmpty, MessagesControllerComponents}
 import play.api.test.CSRFTokenHelper.CSRFFRequestHeader
 import play.api.test.FakeRequest
 import play.api.test.Helpers.{GET, POST}
-import services.GithubService
+import repositories.DataRepository
+import services.{DataRepService, GithubService}
 
 import scala.concurrent.ExecutionContext
 
@@ -27,11 +28,13 @@ trait BaseSpecWithApplication extends BaseSpec with GuiceOneServerPerSuite with 
   implicit val executionContext: ExecutionContext = app.injector.instanceOf[ExecutionContext]
 
   lazy val component: MessagesControllerComponents = injector.instanceOf[MessagesControllerComponents]
-  //lazy val repository: DataRepository = injector.instanceOf[DataRepository]
+  lazy val repository: DataRepository = injector.instanceOf[DataRepository]
   //lazy val service: LibraryService = injector.instanceOf[LibraryService]
   //lazy val connector: LibraryConnector = injector.instanceOf[LibraryConnector]
   lazy val connector: GithubConnector = injector.instanceOf[GithubConnector]
   lazy val githubService: GithubService = injector.instanceOf[GithubService]
+  lazy val dataRepService: DataRepService = injector.instanceOf[DataRepService]
+  lazy val dataRepository: DataRepository = injector.instanceOf[DataRepository]
 
   implicit val messagesApi = app.injector.instanceOf[MessagesApi]
   lazy val injector: Injector = app.injector

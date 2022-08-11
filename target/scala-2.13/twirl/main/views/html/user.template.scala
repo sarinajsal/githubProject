@@ -33,8 +33,8 @@ Seq[Any](format.raw/*3.1*/("""
 </head>
 <body>
     <div>
-        <p>"""),_display_(/*12.13*/user/*12.17*/.login),format.raw/*12.23*/(""" """),format.raw/*12.24*/(""":: """),_display_(/*12.28*/user/*12.32*/.following),format.raw/*12.42*/("""</p>
-        <a href=""""),_display_(/*13.19*/routes/*13.25*/.GithubController.getRepos(user.login)),format.raw/*13.63*/("""">"""),_display_(/*13.66*/user/*13.70*/.login),format.raw/*13.76*/(""" """),format.raw/*13.77*/("""repositories</a>
+        <p>"""),_display_(/*12.13*/user/*12.17*/._login),format.raw/*12.24*/(""" """),format.raw/*12.25*/(""":: """),_display_(/*12.29*/user/*12.33*/.following),format.raw/*12.43*/("""</p>
+        <a href=""""),_display_(/*13.19*/routes/*13.25*/.GithubController.getRepos(user._login)),format.raw/*13.64*/("""">"""),_display_(/*13.67*/user/*13.71*/._login),format.raw/*13.78*/(""" """),format.raw/*13.79*/("""repositories</a>
     </div>
 
 </body>
@@ -54,10 +54,10 @@ Seq[Any](format.raw/*3.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2022-08-03T12:06:53.452493
+                  DATE: 2022-08-09T11:36:17.841333
                   SOURCE: /Users/sarina.salamon/Documents/githubProject/githubProject/app/views/user.scala.html
-                  HASH: 87b90b1890e8df8ce0e5e05bd97dbcf8953e7fa0
-                  MATRIX: 432->1|762->26|873->44|900->45|1055->173|1068->177|1095->183|1124->184|1155->188|1168->192|1199->202|1249->225|1264->231|1323->269|1353->272|1366->276|1393->282|1422->283
+                  HASH: ffe38146052c27ffc043b1a39e717eef9e728550
+                  MATRIX: 432->1|762->26|873->44|900->45|1055->173|1068->177|1096->184|1125->185|1156->189|1169->193|1200->203|1250->226|1265->232|1325->271|1355->274|1368->278|1396->285|1425->286
                   LINES: 17->1|22->2|27->3|28->4|36->12|36->12|36->12|36->12|36->12|36->12|36->12|37->13|37->13|37->13|37->13|37->13|37->13|37->13
                   -- GENERATED --
               */

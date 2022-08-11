@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/Users/sarina.salamon/Documents/githubProject/githubProject/conf/routes
-// @DATE:Fri Aug 05 10:06:56 BST 2022
+// @DATE:Tue Aug 09 11:08:02 BST 2022
 
 
 package router {

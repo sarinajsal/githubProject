@@ -16,17 +16,18 @@ import scala.concurrent.{ExecutionContext, Future}
 
 
 @Singleton
-class DataRepository @Inject()(
-                              mongoComponent: MongoComponent
-                              )(implicit ec: ExecutionContext) extends PlayMongoRepository [UserModel](
+class DataRepository @Inject()(mongoComponent: MongoComponent)(implicit ec: ExecutionContext) extends PlayMongoRepository [UserModel](
   collectionName = "userModels",
   mongoComponent = mongoComponent,
   domainFormat = UserModel.formats,
   indexes = Seq(IndexModel(Indexes.ascending("login"))),
     replaceIndexes = false){
 
-  def createUser(user: UserModel): Future[UserModel] =
-    collection.insertOne(user).toFuture().map(_ =>user)
+  def createUser(user: UserModel): Future[Either[MyError,String]]=
+    collection.insertOne(user).toFuture().flatMap{
+      case userCreated if userCreated.wasAcknowledged().equals(true) => Future(Right("created"))
+      case _ => Future(Left(MyError.BadError(400, "error")))
+    }
 
   private def byLogin(login: String): Bson =
     Filters.and(
